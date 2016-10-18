@@ -31,14 +31,14 @@ class ChallengeList extends Component {
     }
 }
 
-function mapStateToProps(reducerState) {
+function mapStateToProps(state) {
     return {
-        challenges: reducerState.challenges
+        challenges: state.challenges
     }
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({selectChallenge: selectChallenge}, dispatch);
+    return bindActionCreators({ selectChallenge }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChallengeList)
