@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-class ChallengeDetails extends Component {
 
+class ChallengeDetails extends Component {
     render() {
         if (!this.props.challenge) {
             return (
@@ -11,16 +11,16 @@ class ChallengeDetails extends Component {
         }
 
         return (
-            <ul className="list-group col-sm-4">
-                {this.props.challenge.type}
+            <ul className='list-group col-md-8'>
+                {this.props.challenge}
             </ul>
         );
     }
 }
 
-function mapStateToProps(reducerState) {
+function mapStateToProps(state) {
     return {
-        challenge: reducerState.activeChallenge
+        challenge: state.activeChallenge
     }
 }
 

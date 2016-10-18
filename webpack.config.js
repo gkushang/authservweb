@@ -1,6 +1,6 @@
 module.exports = {
   entry: [
-    './src/index.js'
+    './public/index.js'
   ],
   output: {
     path: __dirname,
@@ -20,9 +20,14 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   devServer: {
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+      "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization",
+      "Content-Type": "application/json"
+    },
     historyApiFallback: true,
     contentBase: './',
-      inline:true,
-      port: 8888
+    port: 8888
   }
 };

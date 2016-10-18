@@ -12,7 +12,7 @@ class ChallengeList extends Component {
                     <li
                         key={challenge.type}
                         onClick={() => this.props.selectChallenge(challenge)}
-                        className="list-group-item">
+                        className='list-group-item'>
                         {challenge.type}
                     </li>
                 )
@@ -22,9 +22,11 @@ class ChallengeList extends Component {
 
     render() {
         return (
-            <ul className="list-group col-sm-4">
-                {this.renderList()}
-            </ul>
+            <div className='list-title'>
+                <ul className='list-group col-sm-2'>
+                    {this.renderList()}
+                </ul>
+            </div>
         );
     }
 }
