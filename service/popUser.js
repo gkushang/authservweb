@@ -1,32 +1,21 @@
 var axios = require('axios');
 
-module.exports = function popUser() {
+module.exports = function popUser(challenge) {
 
-    var challenge = function(challenge) {
-        var popOptions = {
-            challengeType: challenge.type.toLowerCase(),
-            requestType: 'pop'
-        };
-
-        return _callAuthServeApi(popOptions)
+    var popOptions = {
+        challengeType: challenge.type.toLowerCase(),
+        requestType: 'pop'
     };
 
-    var _callAuthServeApi = function(requestOptions) {
-
-        var authUserServe = {
-            host: 'http://authserv-8375.ccg21.dev.paypalcorp.com/msmaster/users/pop'
-        };
-
-
-        return axios.get(authUserServe.host, {
-            params: {
-                challengeType: requestOptions.challengeType || requestOptions
-            }
-        });
+    var authUserServe = {
+        host: 'http://authserv-8375.ccg21.dev.paypalcorp.com/msmaster/users/pop'
     };
 
 
-    return {
-        challenge: challenge
-    }
+    return axios.get(authUserServe.host, {
+        params: {
+            challengeType: popOptions.challengeType || popOptions
+        }
+    });
+
 };

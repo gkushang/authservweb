@@ -1,10 +1,10 @@
-import {combineReducers} from "redux";
-import ChallengesReducer from "./challenges-reducer";
-import ActiveChallengeReducer from "./active-challenge";
+import {combineReducers} from 'redux';
+import ChallengesReducer from './challenges-reducer';
+import UserReducer from './user-reducer';
 
 const rootReducer = combineReducers({
     challenges: ChallengesReducer,
-    activeChallenge: ActiveChallengeReducer
+    authJson: UserReducer
 });
 
 export default rootReducer;
