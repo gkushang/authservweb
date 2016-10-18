@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import ChallengeList from '../containers/challenge-list';
-import ChallengeDetails from '../containers/challenge-details';
+import React, {Component} from "react";
+import ChallengeList from "../containers/challenge-list";
+import ChallengeDetails from "../containers/challenge-details";
 
 export default class App extends Component {
     render() {

@@ -18,7 +18,7 @@ module.exports = function popUser() {
         };
 
 
-       return axios.get(authUserServe.host, {
+        return axios.get(authUserServe.host, {
             params: {
                 challengeType: requestOptions.challengeType || requestOptions
             }

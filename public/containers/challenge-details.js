@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, {Component} from "react";
+import {connect} from "react-redux";
 
 
 class ChallengeDetails extends Component {
     render() {
         if (!this.props.challenge) {
             return (
-                <div> </div>
+                <div></div>
             );
         }
 
