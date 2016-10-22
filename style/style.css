@@ -6,3 +6,17 @@
     background-color: lightgray;
     cursor: pointer;
 }
+
+.render-json {
+    font-size: 12px;
+    height: 700px;
+    cursor: pointer;
+}
+
+.app-title {
+    text-align: center;
+}
+
+.snippet {
+    display: block;
+}

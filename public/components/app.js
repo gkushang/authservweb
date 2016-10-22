@@ -1,17 +1,21 @@
 import React, {Component} from 'react';
 import ChallengeList from '../containers/challenge-list';
-import ChallengeDetails from '../containers/pretty-json-viewer';
+import UserInformation from '../containers/user-information';
+import UserDetails from '../containers/user-details';
 
 export default class App extends Component {
     render() {
         return (
-            <div className='navbar navbar-default'>
-                <h2>
-                    E2E Password Recovery & Auth Challenges
-                </h2>
+            <div >
+                <div>
+                <header className='navbar navbar-default navbar-fixed-top'>
+                    <h2> E2E Password Recovery & Auth Challenges </h2>
+                </header>
+                    </div>
 
                 <ChallengeList />
-                <ChallengeDetails />
+                <UserInformation />
+                <UserDetails />
             </div>
         );
     }

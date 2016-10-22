@@ -1,8 +1,8 @@
 export default function() {
     return [
-        {type: 'Sms'},
-        {type: 'Ivr'},
-        {type: 'Email'},
-        {type: 'Ssn'}
+        {type: 'sms'},
+        {type: 'ivr'},
+        {type: 'email'},
+        {type: 'ssn'}
     ]
 }

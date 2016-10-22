@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 
-class PrettyJsonViewer extends Component {
+class UserInformation extends Component {
     render() {
         if (!this.props.authJson) {
             return (
@@ -12,7 +12,9 @@ class PrettyJsonViewer extends Component {
 
         return (
             <ul className='list-group col-md-8'>
-                {this.props.authJson}
+                <div className="snippet">
+                    Email Address: {this.props.authJson.emailAddress}
+                </div>
             </ul>
         );
     }
@@ -24,4 +26,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(PrettyJsonViewer)
+export default connect(mapStateToProps)(UserInformation)
