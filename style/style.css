@@ -13,3 +13,12 @@ body { padding-top: 70px; }
 .fa {
     padding-right: 5px;
 }
+
+.type-info {
+    font-size: 18px;
+
+}
+
+.user-info-panel {
+    padding-top:-100px;
+}

@@ -31,7 +31,7 @@ class UserInformation extends Component {
 
             <div className="container-fluid user-info-panel">
                 <div className="col-sm-9">
-                    <p className="user-info text-center page-header"><i className="fa fa-paypal"> </i> {this.props.authJson.type} </p>
+                    <p className="user-info type-info text-center page-header"><i className="fa fa-paypal"> </i> {this.props.authJson.type} </p>
                     <div className="row">
                         <div className="col-xs-8 col-sm-6">
                             <p className="user-info pull-left"><i className="fa fa-envelope"> </i> {this.props.authJson.emailAddress}</p>
@@ -45,8 +45,8 @@ class UserInformation extends Component {
                         </div>
                         <div className="col-xs-4 col-sm-6">
                             <p className="user-info pull-right"><i className="fa fa-home"> </i> {this.props.authJson.homeAddress1} </p>
-                            <p className="pull-right">{this.props.authJson.homeCity} </p>
-                            <p className="pull-right">{this.props.authJson.homeCountry} </p>
+                            {/*<p className="pull-right">{this.props.authJson.homeCity} </p>*/}
+                            {/*<p className="pull-right">{this.props.authJson.homeCountry} </p>*/}
 
                         </div>
 
@@ -57,7 +57,9 @@ class UserInformation extends Component {
                             <p className="user-info pull-right"><i className="fa fa-phone"> </i> {this.props.authJson.homePhoneNumber} </p>
                         </div>
 
-                        <div className="col-xs-8 col-sm-10 page-header text-center">
+                        <p className="user-info text-center page-header"><i className="fa"> </i>  </p>
+
+                        <div className="col-xs-8 col-sm-6">
                             <p className="user-info"><i className="fa fa-question-circle"> </i> {this.props.authJson.securityAnswer1} </p>
                         </div>
                         <div className="col-xs-4 col-sm-6">
@@ -69,6 +71,22 @@ class UserInformation extends Component {
                         </div>
                         <div className="col-xs-4 col-sm-6">
                             <p className="user-info pull-right"><i className="fa fa-check-circle"> </i> {this.props.authJson.securityAnswer2} </p>
+                        </div>
+
+                        <p className="user-info text-center page-header"><i className="fa"> </i>  </p>
+
+                        <div className="col-xs-8 col-sm-6">
+                            <p className="user-info"><i className="fa fa-cc-visa"> </i> 7373 3939 3784 6268</p>
+                        </div>
+                        <div className="col-xs-4 col-sm-6">
+                            <p className="user-info pull-right"><i className="fa fa-cc-mastercard"> </i> 7373 3939 3784 6268</p>
+                        </div>
+
+                        <div className="col-xs-8 col-sm-6">
+                            <p className="user-info"><i className="fa fa-cc-amex"> </i> 7373 3939 3784 6268</p>
+                        </div>
+                        <div className="col-xs-4 col-sm-6">
+                            <p className="user-info pull-right"><i className="fa fa-cc-discover"> </i> 7373 3939 3784 6268</p>
                         </div>
 
 
