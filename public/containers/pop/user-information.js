@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import FetchSecurityCode from './fetch-security-code';
-
 
 class UserInformation extends Component {
     render() {
@@ -12,7 +10,7 @@ class UserInformation extends Component {
         }
 
         return (
-            <div className="container-fluid user-info-panel">
+            <div className="container-fluid auth-panel">
 
                 <div className="panel-heading">
                     <h1 className=" text-center panel-title type-info"><i className="fa fa-paypal"> </i> {this.props.authJson.type}</h1>
@@ -78,7 +76,6 @@ class UserInformation extends Component {
 
 
                     </div>
-                    <FetchSecurityCode />
                 </div>
                 </div>
         );

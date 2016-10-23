@@ -3,7 +3,8 @@ import ChallengesReducer from './challenges-reducer';
 import UserReducer from './user-reducer';
 
 const rootReducer = combineReducers({
-    challenges: ChallengesReducer,
+    challengesList: ChallengesReducer,
+    securityCodeList: ChallengesReducer,
     authJson: UserReducer
 });
 

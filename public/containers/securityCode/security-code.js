@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {Field, reduxForm} from 'redux-form';
 
-class FetchSecurityCode extends Component {
+class SecurityCode extends Component {
 
     render() {
         return (
                 <div>
-                    <div className="container-fluid fetch-security-code-form">
+                    <div className="container-fluid auth-panel">
                         <Field
                             className="myInput"
                             name="accountNumber"
@@ -28,7 +28,7 @@ class FetchSecurityCode extends Component {
                             component="input"
                             placeholder="Stage2X (CCP Stage)"/>
 
-                        <button className="btn-primary btn-default">Fetch Email Security Code</button>
+                        <button className="btn-primary btn-default">Security Code</button>
 
 
                     </div>
@@ -39,4 +39,4 @@ class FetchSecurityCode extends Component {
 
 export default reduxForm({
     form: 'fetchSecurityCode'
-})(FetchSecurityCode)
+})(SecurityCode)

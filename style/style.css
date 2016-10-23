@@ -1,4 +1,6 @@
-body { padding-top: 70px; }
+body {
+    padding-top: 70px;
+}
 
 #wrapper {
     position:absolute;
@@ -19,11 +21,15 @@ body { padding-top: 70px; }
     height:18px;
 }
 
-.user-info-panel {
-    background-color: lightblue;
+.auth-panel {
     float: left;
     position: inherit;
     width: 80%;
+    height: 100%;
+}
+
+.pop-user-panel {
+    height: auto;
 }
 
 .myInput {
@@ -32,4 +38,8 @@ body { padding-top: 70px; }
 
 .fetch-security-code-form {
     background-color: lightgray;
+}
+
+.security-code-panel {
+    padding: 20px;
 }

@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import ChallengeList from '../containers/challenges-list';
+import ChallengeList from '../containers/pop/challenges-list';
+import SecurityCodeList from '../containers/securityCode/security-code-list'
 
-import Header from '../containers/header';
+import Header from '../containers/header/header';
 
 export default class App extends Component {
     render() {
@@ -9,6 +10,7 @@ export default class App extends Component {
             <div id="wrapper">
                 <Header/>
                 <ChallengeList />
+                <SecurityCodeList />
             </div>
         );
     }

@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {selectChallenge} from '../actions/index';
+import {selectChallenge} from '../../actions/index';
 import {bindActionCreators} from 'redux';
-import UserInformation from '../containers/user-information';
+import UserInformation from './user-information';
 
 class ChallengesList extends Component {
 
@@ -24,13 +24,11 @@ class ChallengesList extends Component {
 
     render() {
         return (
-                <div>
-                    <div className="container-fluid">
+                <div className="container-fluid pop-user-panel">
                     <div className="col-md-2">
                         {this.renderList()}
                     </div>
                     <UserInformation />
-                    </div>
                 </div>
         );
     }
@@ -38,7 +36,7 @@ class ChallengesList extends Component {
 
 function mapStateToProps(state) {
     return {
-        challenges: state.challenges
+        challenges: state.challengesList.challenges
     }
 }
 
