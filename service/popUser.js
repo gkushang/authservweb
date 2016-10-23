@@ -21,6 +21,7 @@ module.exports = function popUser(challenge) {
 
     return {
         data: {
+            type: challenge.type,
             "phoneNumber": "4089673035",
             "phoneNumberMasked": "(4••) ••• - 3035",
             "addNewPhone": "4089673031",

@@ -11,10 +11,15 @@ class UserInformation extends Component {
         }
 
         return (
-            <ul className='list-group col-md-8'>
-                <div className="snippet">
+            <ul className="list-group col-md-8">
+                <span>
+                    Challenge: {this.props.authJson.type}
+                </span>
+
+                <span>
                     Email Address: {this.props.authJson.emailAddress}
-                </div>
+                </span>
+
             </ul>
         );
     }
