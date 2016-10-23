@@ -2,7 +2,7 @@ export default function() {
     return [
         {type: 'Password Recovery'},
         {type: 'Sms'},
-        {type: '2Way Sms'},
+        {type: 'Two Way Sms'},
         {type: 'Ivr'},
         {type: 'Pin Less Ivr'},
         {type: 'Email'},

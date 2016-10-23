@@ -24,30 +24,12 @@ class ChallengesList extends Component {
 
     render() {
         return (
-            // <div>
-            //     <div className="row">
-            //         <div className="row">
-            //             <div className="col-md-2">
-            //                 <div className="list-group list-cust">
-            //                     {this.renderList()}
-            //                 </div>
-            //             </div>
-            //             <UserInformation />
-            //         </div>
-            //     </div>
-            // </div>
-            <div id="wrapper">
-                <nav className="navbar-default navbar-static-side" role="navigation">
-                    <div className="sidebar-collapse">
-                        <div className="col-md-2">
-                            <ul className="nav metismenu" id="side-menu">
-                                {this.renderList()}
-                            </ul>
-                        </div>
-                        <UserInformation />
+                <div>
+                    <div className="col-md-2">
+                        {this.renderList()}
                     </div>
-                </nav>
-            </div>
+                    <UserInformation />
+                </div>
         );
     }
 }
