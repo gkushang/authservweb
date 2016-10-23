@@ -15,12 +15,21 @@ body { padding-top: 70px; }
 }
 
 .type-info {
-    font-size: 18px;
-    margin-top: 0px;
-    float: top;
-
+    padding-bottom:30px;
+    height:18px;
 }
 
 .user-info-panel {
-    top: 0;
+    background-color: lightblue;
+    float: left;
+    position: inherit;
+    width: 80%;
+}
+
+.myInput {
+    margin-right: 20px;
+}
+
+.fetch-security-code-form {
+    background-color: lightgray;
 }

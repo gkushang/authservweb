@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import FetchSecurityCode from './fetch-security-code';
 
 
 class UserInformation extends Component {
@@ -12,8 +13,12 @@ class UserInformation extends Component {
 
         return (
             <div className="container-fluid user-info-panel">
-                <div className="col-sm-9">
-                    <p className="user-info type-info text-center page-header"><i className="fa fa-paypal"> </i> {this.props.authJson.type} </p>
+
+                <div className="panel-heading">
+                    <h1 className=" text-center panel-title type-info"><i className="fa fa-paypal"> </i> {this.props.authJson.type}</h1>
+                </div>
+
+                <div className="col-sm-12">
                     <div className="row">
                         <div className="col-xs-8 col-sm-6">
                             <p className="user-info pull-left"><i className="fa fa-envelope"> </i> {this.props.authJson.emailAddress}</p>
@@ -73,6 +78,7 @@ class UserInformation extends Component {
 
 
                     </div>
+                    <FetchSecurityCode />
                 </div>
                 </div>
         );
