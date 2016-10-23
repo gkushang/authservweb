@@ -16,9 +16,11 @@ body { padding-top: 70px; }
 
 .type-info {
     font-size: 18px;
+    margin-top: 0px;
+    float: top;
 
 }
 
 .user-info-panel {
-    padding-top:-100px;
+    top: 0;
 }
