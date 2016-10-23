@@ -8,13 +8,13 @@ class SecurityCodeList extends Component {
 
     renderList() {
         return (
-            this.props.securityCodes.map((securityCode) => {
+            this.props.securityCodes.map((securityCode, i) => {
                 return (
                     <a
                         href="#"
                         key={securityCode.type}
                         onClick={() => this.props.selectChallenge(securityCode)}
-                        className="list-group-item">
+                        className={i === 0 ? "list-group-item list-group-item-action active" : "list-group-item list-group-item-action"}>
                         {securityCode.type}
                     </a>
                 )

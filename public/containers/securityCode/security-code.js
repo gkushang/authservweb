@@ -1,38 +1,46 @@
 import React, {Component} from 'react';
 import {Field, reduxForm} from 'redux-form';
+import Input from '../presentational/Input';
+
 
 class SecurityCode extends Component {
 
     render() {
+
         return (
-                <div>
-                    <div className="container-fluid auth-panel">
+            <form className="form-inline">
+                <div className="container-fluid security-code-info">
+
+                    <div className="form-group field">
                         <Field
-                            className="myInput"
+                            className="form-control"
+                            name="stage"
+                            component={Input}
+                            placeholder="Stage2 (CCP Stage)"/>
+                    </div>
+
+                    <div className="form-group field">
+                        <Field
+                            className="form-control"
                             name="accountNumber"
-                            type="text"
-                            component="input"
+                            component={Input}
                             placeholder="Account Number"/>
+                    </div>
 
-                        <Field
-                            className="myInput"
-                            name="stage2"
-                            type="text"
-                            component="input"
-                            placeholder="Stage2X (CCP Stage)"/>
+                    <div className="form-group field">
+                        <button type="submit" className="btn btn-primary">
+                            <i className="fa fa-paper-plane" aria-hidden="true"></i>
+                            Security Code
+                        </button>
+                    </div>
 
-                        <Field
-                            className="myInput"
-                            name="stage2"
-                            type="text"
-                            component="input"
-                            placeholder="Stage2X (CCP Stage)"/>
-
-                        <button className="btn-primary btn-default">Security Code</button>
-
-
+                    <div className="form-group security-code-show">
+                        <div className="security-code-retrieved text-center">
+                            8989
+                        </div>
                     </div>
                 </div>
+            </form>
         );
     }
 }
