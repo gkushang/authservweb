@@ -9,6 +9,7 @@ export default (field) => {
                 floatingLabelText={field.placeholder}
                 errorText = {field.meta.touched && field.meta.error}
                 className="security-field"
+                hintText={field.hintText}
                 errorStyle={{"font-size": "10px"}}
                 style={{
                     "padding-bottom": "5px",

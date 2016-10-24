@@ -18,9 +18,11 @@ export default function() {
                     </div>
 
                     <div id="navbar" className="navbar-collapse collapse">
-                        <ul className="nav navbar-nav">
-                            <li className="active pull-right">
-                                <a href="#">Pop User <span className="sr-only">(current)</span></a>
+                        <ul className="nav navbar-nav navbar-right">
+                            <li className="text-info">
+                                <a href="https://github.paypal.com/kugajjar/authuserserv/blob/master/readme.md" target="_blank">
+                                    Docs
+                                </a>
                             </li>
 
                         </ul>

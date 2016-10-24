@@ -40,7 +40,8 @@ class SecurityCode extends Component {
 
         const renderStageField = () => (<Field
                 name="stage"
-                placeholder="stage2 (CCP)"
+                placeholder="ccp stage2"
+                hintText="stage2xxxx"
                 type="text"
                 component={Input}/>
             );
