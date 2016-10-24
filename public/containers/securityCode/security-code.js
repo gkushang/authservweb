@@ -1,50 +1,89 @@
 import React, {Component} from 'react';
-import {Field, reduxForm} from 'redux-form';
+import { reduxForm, Fields, Field} from 'redux-form';
 import Input from '../presentational/Input';
+import { connect } from 'react-redux';
 
+export const validate = (values) => {
+    const errors = {};
+
+    if(!values.stage) {
+        errors.stage =  'Required*';
+    }
+
+    if(!values.accountNumber) {
+        errors.accountNumber =  'Required*';
+    }
+
+    return errors;
+};
 
 class SecurityCode extends Component {
 
+
     render() {
 
+        const { handleSubmit, submitting, reset, pristine} = this.props;
+
+        const fetchSecurityCode = () => {
+            console.log('fetch now');
+        };
+
+
         return (
-            <form className="form-inline">
-                <div className="container-fluid security-code-info">
 
-                    <div className="form-group field">
-                        <Field
-                            className="form-control"
-                            name="stage"
-                            component={Input}
-                            placeholder="Stage2 (CCP Stage)"/>
-                    </div>
+                <div className="container-fluid">
 
-                    <div className="form-group field">
-                        <Field
-                            className="form-control"
-                            name="accountNumber"
-                            component={Input}
-                            placeholder="Account Number"/>
-                    </div>
+                    <div className="form-group fetch-security-code col-sm-2">
 
-                    <div className="form-group field">
-                        <button type="submit" className="btn btn-primary">
-                            <i className="fa fa-paper-plane" aria-hidden="true"></i>
+                        <button type="submit" className="btn btn-primary" disabled={ pristine || submitting }>
+                            <i className="fa fa-paper-plane" aria-hidden="true"> </i>
                             Security Code
                         </button>
+
                     </div>
 
-                    <div className="form-group security-code-show">
-                        <div className="security-code-retrieved text-center">
-                            8989
+                    <div>
+                        <div className="form-group security-code-retrieved col-sm-2">
+            <div className="show-code">
+                            <span>4444</span>
+            </div>
                         </div>
                     </div>
+                    <div className="row">
+                        <form className="form-inline" onSubmit={handleSubmit(fetchSecurityCode)}>
+                        <div className="form-group col-sm-3">
+                            <Field
+                                name="stage"
+                                placeholder="Stage2 (CCP Stage)"
+                                type="text"
+                                component={Input}/>
+                        </div>
+
+                        <div className="form-group col-sm-3">
+                            <Field
+                                name="accountNumber"
+                                placeholder="Account Number"
+                                type="text"
+                                component={Input}/>
+                        </div>
+
+                        </form>
+                    </div>
                 </div>
-            </form>
+
         );
     }
 }
 
-export default reduxForm({
-    form: 'fetchSecurityCode'
-})(SecurityCode)
+function mapStateToProps(state) {
+    return {
+        securityCodeChallenge: state.securityCodeChallenge
+    }
+}
+
+SecurityCode = reduxForm({
+    form: 'securityCodeForm',
+    validate
+}, () => {})(SecurityCode);
+
+export default connect(mapStateToProps)(SecurityCode)

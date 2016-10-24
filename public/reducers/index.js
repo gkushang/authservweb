@@ -1,11 +1,17 @@
-import {combineReducers} from 'redux';
+import { combineReducers, createStore } from 'redux';
 import ChallengesReducer from './challenges-reducer';
 import UserReducer from './user-reducer';
+import SecurityCodeReducer from './security-code-reducer';
 
-const rootReducer = combineReducers({
+import { reducer as form } from 'redux-form';
+
+const reducers = {
     challengesList: ChallengesReducer,
     securityCodeList: ChallengesReducer,
-    authJson: UserReducer
-});
+    authJson: UserReducer,
+    securityCodeChallenge: SecurityCodeReducer,
+    form
+};
 
-export default rootReducer;
+export default combineReducers(reducers);
+

@@ -1,21 +1,22 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {selectChallenge} from '../../actions/index';
+import {selectSecurityCodeChallenge} from '../../actions/index';
 import {bindActionCreators} from 'redux';
 import SecurityCode from './security-code';
+
 
 class SecurityCodeList extends Component {
 
     renderList() {
         return (
-            this.props.securityCodes.map((securityCode, i) => {
+            this.props.securityCodesChallenges.map((securityCodeChallenge, i) => {
                 return (
                     <a
                         href="#"
-                        key={securityCode.type}
-                        onClick={() => this.props.selectChallenge(securityCode)}
+                        key={securityCodeChallenge.type}
+                        onClick={() => this.props.selectSecurityCodeChallenge(securityCodeChallenge)}
                         className={i === 0 ? "list-group-item list-group-item-action active" : "list-group-item list-group-item-action"}>
-                        {securityCode.type}
+                        {securityCodeChallenge.type}
                     </a>
                 )
             })
@@ -36,12 +37,12 @@ class SecurityCodeList extends Component {
 
 function mapStateToProps(state) {
     return {
-        securityCodes: state.securityCodeList.securityCodes
+        securityCodesChallenges: state.securityCodeList.securityCodes
     }
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ selectChallenge }, dispatch);
+    return bindActionCreators({ selectSecurityCodeChallenge }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SecurityCodeList)
