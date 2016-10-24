@@ -56,22 +56,23 @@ class SecurityCode extends Component {
             <div className="security-code-fetch">
             <form className="form-inline" onSubmit={handleSubmit(fetchSecurityCode)}>
 
-                <div className="form-group col-sm-3">
+                <div className="form-group col-sm-4">
                     {renderStageField()}
                 </div>
 
-                <div className="form-group col-sm-3">
+                <div className="form-group col-sm-4">
                     {renderAccountField()}
                 </div>
 
-                <div className="form-group security-code-retrieved col-sm-3">
-                    <label>4444</label>
+                <div className="form-group security-code-retrieved col-sm-1">
+                    <label>8889</label>
                 </div>
 
-
-                <div className="form-group col-sm-3 pull-right security-code-btn">
+                <div className="form-group col-sm-2 security-code-btn pull-right">
                     {renderButton()}
                 </div>
+
+
 
             </form>
                 </div>
