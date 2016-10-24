@@ -10,8 +10,6 @@ export function selectChallenge(challenge) {
 }
 
 export function selectSecurityCodeChallenge(securityCodeChallenge) {
-    console.log('securityCodeChallenge action/index: ', securityCodeChallenge);
-
     return {
         type: Constants.SECURITY_CODE_CHALLENGE_SELECTED,
         payload: securityCodeChallenge

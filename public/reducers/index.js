@@ -8,7 +8,7 @@ import { reducer as form } from 'redux-form';
 const reducers = {
     challengesList: ChallengesReducer,
     securityCodeList: ChallengesReducer,
-    authJson: UserReducer,
+    user: UserReducer,
     securityCodeChallenge: SecurityCodeReducer,
     securityCodeFetched: SecurityCodeReducer,
     form

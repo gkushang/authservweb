@@ -1,3 +1,4 @@
+
 body {
     padding-top: 70px;
 }
@@ -16,6 +17,7 @@ body {
 }
 .user-info {
     padding: 5px;
+    font-size: 14px;
 }
 
 .fa {
@@ -35,7 +37,14 @@ body {
     border-radius:5px;
 }
 
+.user-info-title {
+    padding: 5px;
 
+}
+
+.panel-heading {
+    font-size: 18px;
+}
 .user-info-action {
     line-height: 493px;
     color: lightgray;
@@ -82,7 +91,7 @@ body {
 
 .security-code-retrieved {
     letter-spacing: 10px;
-    font-size: 48px;
+    font-size: 34px;
     line-height: 48px;
     color: darkgray;
     vertical-align: middle;
@@ -98,6 +107,7 @@ body {
     height: 100%;
     overflow:hidden;
     border-radius:5px;
-
 }
+
+
 

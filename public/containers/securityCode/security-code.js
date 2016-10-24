@@ -8,6 +8,8 @@ import {fetchSecurityCode} from '../../actions/index';
 export const validate = (values) => {
     const errors = {};
 
+    console.log('values: ', values);
+
     if(!values.stage) {
         errors.stage =  'Required';
     }
@@ -21,10 +23,11 @@ export const validate = (values) => {
 
 class SecurityCode extends Component {
 
-
     render() {
 
-        const { handleSubmit, submitting, reset, pristine} = this.props;
+        console.log('props == ', this.props);
+
+        const { handleSubmit, submitting, reset, pristine, value, onChange } = this.props;
 
         const renderButton = () => (
             <div>
@@ -41,21 +44,35 @@ class SecurityCode extends Component {
         const renderStageField = () => (<Field
                 name="stage"
                 placeholder="ccp stage2"
-                hintText="stage2xxxx"
                 type="text"
+                hintText="stage2"
                 component={Input}/>
             );
+
+
+        // {...this.props.user && this.props.user.accountNumber ? {input: {value:this.props.user.accountNumber }} : {}}
+        //prefillValue={this.props.user && this.props.user.accountNumber || ''}
+
+        // {...this.props.user && this.props.user.accountNumber ? {
+        //     input: {
+        //         value:this.props.user.accountNumber
+        //     },
+        //     initialValue: 'aa'
+        // } : {}}
 
         const renderAccountField = () => (<Field
                     name="accountNumber"
                     placeholder="account number"
                     type="text"
-                    component={Input}/>
+                    component={Input}
+                    defaultValue={this.props.user && this.props.user.accountNumber || ''}
+            />
             );
 
         const handleFetch = (params) => {
             this.props.fetchSecurityCode(this.props.securityCodeChallenge, params);
         };
+
 
         return (
 
@@ -95,7 +112,8 @@ class SecurityCode extends Component {
 function mapStateToProps(state) {
     return {
         securityCodeChallenge: state.securityCodeChallenge,
-        securityCodeFetched: state.securityCodeFetched
+        securityCodeFetched: state.securityCodeFetched,
+        user: state.user
     }
 }
 

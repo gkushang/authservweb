@@ -7,6 +7,7 @@ import UserInformation from './user-information';
 class ChallengesList extends Component {
 
     renderList() {
+
         return (
             this.props.challenges.map((challenge) => {
                 return (

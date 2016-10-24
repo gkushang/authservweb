@@ -21,7 +21,7 @@ export default function() {
                         <ul className="nav navbar-nav navbar-right">
                             <li className="text-info">
                                 <a href="https://github.paypal.com/kugajjar/authuserserv/blob/master/readme.md" target="_blank">
-                                    Docs
+                                    API Docs
                                 </a>
                             </li>
 

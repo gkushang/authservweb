@@ -3,64 +3,87 @@ import {connect} from 'react-redux';
 
 class UserInformation extends Component {
     render() {
-        if (!this.props.authJson) {
+
+        console.log('props == ', this.props);
+
+        const userInfo = this.props.user;
+
+        if (!userInfo) {
             return (
                 <div className="container-fluid auth-panel panel-color text-center user-info-action">
                     Select Challenge to Pop User
                 </div>
             );
-        }
+        } 
+
+        // <p className="text-center user-info-title "><i className="fa fa-paypal"> </i> {this.props.challenge.type}</p>
+
+        const challenges = userInfo.challenges.join(', ');
 
         return (
             <div className="container-fluid auth-panel panel-color">
 
-                <div className="panel-heading">
-                    <h1 className=" text-center panel-title type-info"><i className="fa fa-paypal"> </i> {this.props.authJson.type}</h1>
+                <div className="panel-heading text-info">
+                    <p className="text-center user-info-title "><i className="fa fa-paypal"> </i> {userInfo.challengeType}</p>
                 </div>
 
                 <div className="col-sm-12">
                     <div className="row">
                         <div className="col-xs-8 col-sm-6">
-                            <p className="user-info pull-left"><i className="fa fa-envelope"> </i> {this.props.authJson.emailAddress}</p>
+                            <p className="user-info pull-left"><i className="fa fa-envelope"> </i> {userInfo.user.emailAddress}</p>
                         </div>
                         <div className="col-xs-4 col-sm-6">
-                            <p className="user-info pull-right"><i className="fa fa-user-secret"> </i> {this.props.authJson.accountNumber}</p>
+                            <p className="user-info pull-right"><i className="fa fa-user-secret"> </i> {userInfo.user.accountNumber}</p>
                         </div>
 
                         <div className="col-xs-8 col-sm-6">
-                            <p className="user-info"><i className="fa fa-user"> </i> {this.props.authJson.firstName}</p>
+                            <p className="user-info"><i className="fa fa-user"> </i> {userInfo.user.firstName}</p>
                         </div>
                         <div className="col-xs-4 col-sm-6">
-                            <p className="user-info pull-right"><i className="fa fa-home"> </i> {this.props.authJson.homeAddress1} </p>
+                            <p className="user-info pull-right"><i className="fa fa-home"> </i> {userInfo.user.homeAddress1} </p>
                             {/*<p className="pull-right">{this.props.authJson.homeCity} </p>*/}
                             {/*<p className="pull-right">{this.props.authJson.homeCountry} </p>*/}
 
                         </div>
 
                         <div className="col-xs-8 col-sm-6">
-                            <p className="user-info"><i className="fa fa-mobile"> </i> {this.props.authJson.mobilePhone} </p>
+                            <p className="user-info"><i className="fa fa-mobile"> </i> {userInfo.user.mobilePhone} </p>
                         </div>
                         <div className="col-xs-4 col-sm-6">
-                            <p className="user-info pull-right"><i className="fa fa-phone"> </i> {this.props.authJson.homePhoneNumber} </p>
+                            <p className="user-info pull-right"><i className="fa fa-phone"> </i> {userInfo.user.homePhoneNumber} </p>
                         </div>
 
-                        <p className="user-info text-center page-header"><i className="fa"> </i>  </p>
+                        <div className="col-xs-4 col-sm-6">
+                            <p className="user-info"><i className="fa fa-user-plus"> </i> {userInfo.user.accountType}</p>
+                        </div>
+
+                        <div className="col-xs-4 col-sm-6">
+                            <p className="user-info pull-right"><i className="fa fa-desktop" aria-hidden="true"> </i> {userInfo.stage} </p>
+                        </div>
 
                         <div className="col-xs-8 col-sm-6">
-                            <p className="user-info"><i className="fa fa-question-circle"> </i> {this.props.authJson.securityAnswer1} </p>
+                            <p className="user-info"><i className="fa fa-question-circle"> </i> {userInfo.user.securityAnswer1} </p>
                         </div>
                         <div className="col-xs-4 col-sm-6">
-                            <p className="user-info pull-right"><i className="fa fa-check-circle"> </i> {this.props.authJson.securityAnswer1} </p>
+                            <p className="user-info pull-right"><i className="fa fa-check-circle"> </i> {userInfo.user.securityAnswer1} </p>
                         </div>
 
                         <div className="col-xs-8 col-sm-6">
-                            <p className="user-info"><i className="fa fa-question-circle"> </i> {this.props.authJson.securityAnswer2} </p>
+                            <p className="user-info"><i className="fa fa-question-circle"> </i> {userInfo.user.securityAnswer2} </p>
                         </div>
                         <div className="col-xs-4 col-sm-6">
-                            <p className="user-info pull-right"><i className="fa fa-check-circle"> </i> {this.props.authJson.securityAnswer2} </p>
+                            <p className="user-info pull-right"><i className="fa fa-check-circle"> </i> {userInfo.user.securityAnswer2} </p>
                         </div>
 
-                        <p className="user-info text-center page-header"><i className="fa"> </i>  </p>
+                        <div className="col-xs-4 col-sm-6">
+                            <p className="user-info"><i className="fa fa-hand-o-right"> </i> {userInfo.available} left</p>
+                        </div>
+
+                        <div className="col-xs-4 col-sm-6">
+                            <p className="user-info pull-right"><i className="fa fa-list-ul" aria-hidden="true"> </i> {challenges} </p>
+                        </div>
+
+                        <p className="text-center page-header"><i className="fa"> </i>  </p>
 
                         <div className="col-xs-8 col-sm-6">
                             <p className="user-info"><i className="fa fa-cc-visa"> </i> 7373 3939 3784 6268</p>
@@ -86,7 +109,8 @@ class UserInformation extends Component {
 
 function mapStateToProps(state) {
     return {
-        authJson: state.authJson
+        user: state.user,
+        challenge: state.challenge
     }
 }
 
