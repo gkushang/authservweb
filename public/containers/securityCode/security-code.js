@@ -9,11 +9,11 @@ export const validate = (values) => {
     const errors = {};
 
     if(!values.stage) {
-        errors.stage =  'Required*';
+        errors.stage =  'Required';
     }
 
     if(!values.accountNumber) {
-        errors.accountNumber =  'Required*';
+        errors.accountNumber =  'Required';
     }
 
     return errors;
@@ -40,14 +40,14 @@ class SecurityCode extends Component {
 
         const renderStageField = () => (<Field
                 name="stage"
-                placeholder="Stage2 (CCP Stage)"
+                placeholder="stage2 (CCP)"
                 type="text"
                 component={Input}/>
             );
 
         const renderAccountField = () => (<Field
                     name="accountNumber"
-                    placeholder="Account"
+                    placeholder="account number"
                     type="text"
                     component={Input}/>
             );
@@ -58,7 +58,8 @@ class SecurityCode extends Component {
 
         return (
 
-            <div className="security-code-fetch">
+            <div>
+            <div className="security-code-fetch panel-color">
             <form className="form-inline" onSubmit={handleSubmit(handleFetch)}>
 
                 <div className="form-group col-sm-4">
@@ -74,12 +75,16 @@ class SecurityCode extends Component {
                     {renderButton()}
                 </div>
 
+
                 <div className="form-group security-code-retrieved pull-right col-sm-2">
+
                     <label>{this.props.securityCodeFetched.code || ''}</label>
-                </div>
+                        </div>
 
 
             </form>
+            </div>
+
                 </div>
 
         );

@@ -5,12 +5,14 @@ class UserInformation extends Component {
     render() {
         if (!this.props.authJson) {
             return (
-                <div></div>
+                <div className="container-fluid auth-panel panel-color text-center user-info-action">
+                    Select Challenge to Pop User
+                </div>
             );
         }
 
         return (
-            <div className="container-fluid auth-panel">
+            <div className="container-fluid auth-panel panel-color">
 
                 <div className="panel-heading">
                     <h1 className=" text-center panel-title type-info"><i className="fa fa-paypal"> </i> {this.props.authJson.type}</h1>
