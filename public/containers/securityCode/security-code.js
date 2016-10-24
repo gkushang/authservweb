@@ -28,47 +28,52 @@ class SecurityCode extends Component {
             console.log('fetch now');
         };
 
+        const renderButton = () => (
+            <div>
+                <button type="submit" className="btn btn-primary" disabled={ pristine || submitting }>
+                    <i className="fa fa-paper-plane" aria-hidden="true"> </i>
+                    Security Code
+                </button>
+            </div>
+            );
+
+        const renderStageField = () => (<Field
+                name="stage"
+                placeholder="Stage2 (CCP Stage)"
+                type="text"
+                component={Input}/>
+            );
+
+        const renderAccountField = () => (<Field
+                    name="accountNumber"
+                    placeholder="Account"
+                    type="text"
+                    component={Input}/>
+            );
 
         return (
 
-                <div className="container-fluid">
+            <div className="security-code-fetch">
+            <form className="form-inline" onSubmit={handleSubmit(fetchSecurityCode)}>
 
-                    <div className="form-group fetch-security-code col-sm-2">
+                <div className="form-group col-sm-3">
+                    {renderStageField()}
+                </div>
 
-                        <button type="submit" className="btn btn-primary" disabled={ pristine || submitting }>
-                            <i className="fa fa-paper-plane" aria-hidden="true"> </i>
-                            Security Code
-                        </button>
+                <div className="form-group col-sm-3">
+                    {renderAccountField()}
+                </div>
 
-                    </div>
+                <div className="form-group security-code-retrieved col-sm-3">
+                    <label>4444</label>
+                </div>
 
-                    <div>
-                        <div className="form-group security-code-retrieved col-sm-2">
-            <div className="show-code">
-                            <span>4444</span>
-            </div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <form className="form-inline" onSubmit={handleSubmit(fetchSecurityCode)}>
-                        <div className="form-group col-sm-3">
-                            <Field
-                                name="stage"
-                                placeholder="Stage2 (CCP Stage)"
-                                type="text"
-                                component={Input}/>
-                        </div>
 
-                        <div className="form-group col-sm-3">
-                            <Field
-                                name="accountNumber"
-                                placeholder="Account Number"
-                                type="text"
-                                component={Input}/>
-                        </div>
+                <div className="form-group col-sm-3 pull-right security-code-btn">
+                    {renderButton()}
+                </div>
 
-                        </form>
-                    </div>
+            </form>
                 </div>
 
         );

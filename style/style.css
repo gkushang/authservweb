@@ -31,13 +31,22 @@ body {
 .pop-user-panel {
     height: auto;
 }
+.security-code-fetch {
+    float: left;
+    position: relative;
+    width: 80%;
+    height: 100%;
+}
 
-.fetch-security-code {
+.security-code-btn {
+    height: 100px;
     vertical-align: middle;
+    padding-top:35px;
 }
 
 .security-code-panel {
     padding: 25px;
+    vertical-align: middle;
 }
 
 .security-code-retrieved {
@@ -46,9 +55,11 @@ body {
     line-height: 48px;
     color: darkgray;
     vertical-align: middle;
-}
+    padding-top: 30px;
 
-.show-code{
-    background-color: lightgray;
-    height: 100%;
+    text-align: center;
+
+    display: table-cell;
+    width: 100%;
+    margin: 0 auto;
 }
