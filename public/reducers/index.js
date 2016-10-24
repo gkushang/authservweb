@@ -10,6 +10,7 @@ const reducers = {
     securityCodeList: ChallengesReducer,
     authJson: UserReducer,
     securityCodeChallenge: SecurityCodeReducer,
+    securityCodeFetched: SecurityCodeReducer,
     form
 };
 

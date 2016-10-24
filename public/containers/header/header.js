@@ -19,12 +19,10 @@ export default function() {
 
                     <div id="navbar" className="navbar-collapse collapse">
                         <ul className="nav navbar-nav">
-                            <li className="active">
+                            <li className="active pull-right">
                                 <a href="#">Pop User <span className="sr-only">(current)</span></a>
                             </li>
-                            <li>
-                                <a href="/create">Create User</a>
-                            </li>
+                            
                         </ul>
                     </div>
                 </div>

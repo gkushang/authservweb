@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import { reduxForm, Fields, Field} from 'redux-form';
 import Input from '../presentational/Input';
 import { connect } from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {fetchSecurityCode} from '../../actions/index';
 
 export const validate = (values) => {
     const errors = {};
@@ -24,13 +26,12 @@ class SecurityCode extends Component {
 
         const { handleSubmit, submitting, reset, pristine} = this.props;
 
-        const fetchSecurityCode = () => {
-            console.log('fetch now');
-        };
-
         const renderButton = () => (
             <div>
-                <button type="submit" className="btn btn-primary" disabled={ pristine || submitting }>
+                <button
+                    type="submit"
+                    className="btn btn-primary"
+                    disabled={ pristine || submitting } >
                     <i className="fa fa-paper-plane" aria-hidden="true"> </i>
                     Security Code
                 </button>
@@ -51,10 +52,14 @@ class SecurityCode extends Component {
                     component={Input}/>
             );
 
+        const handleFetch = (params) => {
+            this.props.fetchSecurityCode(this.props.securityCodeChallenge, params);
+        };
+
         return (
 
             <div className="security-code-fetch">
-            <form className="form-inline" onSubmit={handleSubmit(fetchSecurityCode)}>
+            <form className="form-inline" onSubmit={handleSubmit(handleFetch)}>
 
                 <div className="form-group col-sm-4">
                     {renderStageField()}
@@ -64,14 +69,14 @@ class SecurityCode extends Component {
                     {renderAccountField()}
                 </div>
 
-                <div className="form-group security-code-retrieved col-sm-1">
-                    <label>8889</label>
-                </div>
 
-                <div className="form-group col-sm-2 security-code-btn pull-right">
+                <div className="form-group col-sm-1 security-code-btn ">
                     {renderButton()}
                 </div>
 
+                <div className="form-group security-code-retrieved pull-right col-sm-2">
+                    <label>{this.props.securityCodeFetched.code || ''}</label>
+                </div>
 
 
             </form>
@@ -83,7 +88,8 @@ class SecurityCode extends Component {
 
 function mapStateToProps(state) {
     return {
-        securityCodeChallenge: state.securityCodeChallenge
+        securityCodeChallenge: state.securityCodeChallenge,
+        securityCodeFetched: state.securityCodeFetched
     }
 }
 
@@ -92,4 +98,9 @@ SecurityCode = reduxForm({
     validate
 }, () => {})(SecurityCode);
 
-export default connect(mapStateToProps)(SecurityCode)
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({ fetchSecurityCode }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SecurityCode)
