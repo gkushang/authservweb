@@ -41,7 +41,7 @@ body {
 .security-code-btn {
     height: 100px;
     vertical-align: middle;
-    padding-top:35px;
+    padding-top: 25px;
 
     /*background-color: black;*/
 }
@@ -57,13 +57,17 @@ body {
     line-height: 48px;
     color: darkgray;
     vertical-align: middle;
-    padding-top: 30px;
 
     text-align: center;
 
     display: table-cell;
-    width: 100%;
-    margin: 0 auto;
 
-    /*background-color: black;*/
+    background-color: lightblue;
+
+    width: 100%;
+    margin: 22.8px 0 40.4px;
+    padding: 26px 0 8px;
+    height: 100%;
+    overflow:hidden;
 }
+

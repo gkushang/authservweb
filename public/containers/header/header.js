@@ -22,7 +22,7 @@ export default function() {
                             <li className="active pull-right">
                                 <a href="#">Pop User <span className="sr-only">(current)</span></a>
                             </li>
-                            
+
                         </ul>
                     </div>
                 </div>
