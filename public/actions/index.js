@@ -1,5 +1,6 @@
 import Constants from '../helpers/contants';
 import popUser from '../../service/popUser';
+import faker from 'faker';
 
 export function selectChallenge(challenge) {
     const user = popUser(challenge);
@@ -21,7 +22,8 @@ export function fetchSecurityCode(securityCodeChallenge, params) {
     //fetch code for securityCodeChallenge.type & account stage from params;
 
     var code = {
-        code: '7839'
+        code: faker.random.number(9999),
+        error: faker.random.number(9999)
     };
 
     return {

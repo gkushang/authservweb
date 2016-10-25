@@ -41,6 +41,21 @@ class SecurityCode extends Component {
             </div>
             );
 
+        const renderError = (err) => (
+            // <div className="col-lg-12 security-code-error "  data-hide="alert">
+            //     <div className="security-code-error-txt alert alert-danger col-sm-12 fade in"  data-hide="alert">
+            //         <button type="button" className="close" data-hide="alert">×</button>
+            //         <strong>Error!</strong> {err}
+            //     </div>
+            // </div>
+
+            <div className="security-code-error-txt alert alert-danger col-sm-12" >
+                <button type="button" className="close alert-close">×</button>
+                <strong>Error!</strong> {err.error}
+            </div>
+
+        );
+
         const renderStageField = () => (<Field
                 name="stage"
                 placeholder="ccp stage2"
@@ -77,38 +92,39 @@ class SecurityCode extends Component {
         return (
 
             <div>
-            <div className="security-code-fetch panel-color">
-            <form className="form-inline" onSubmit={handleSubmit(handleFetch)}>
+                <div className="security-code-fetch panel-color">
+                    <form className="form-inline" onSubmit={handleSubmit(handleFetch)}>
 
-                <div className="form-group col-sm-4">
-                    {renderStageField()}
-                </div>
+                        <div className="form-group col-sm-4">
+                            {renderStageField()}
+                        </div>
 
-                <div className="form-group col-sm-4">
-                    {renderAccountField()}
-                </div>
-
-
-                <div className="form-group col-sm-1 security-code-btn ">
-                    {renderButton()}
-                </div>
-
-
-                <div className="form-group security-code-retrieved pull-right col-sm-2">
-
-                    <label>{this.props.securityCodeFetched.code || ''}</label>
+                        <div className="form-group col-sm-4">
+                            {renderAccountField()}
                         </div>
 
 
-            </form>
-            </div>
+                        <div className="form-group col-sm-1 security-code-btn ">
+                            {renderButton()}
+                        </div>
 
+
+                        <div className="form-group security-code-retrieved pull-right col-sm-2">
+                            <label>{this.props.securityCodeFetched.code || ''}</label>
+                        </div>
+
+                        {this.props.securityCodeFetched.error ? renderError(this.props.securityCodeFetched) : ''}
+
+                    </form>
                 </div>
+
+            </div>
 
         );
     }
 }
 
+// {this.props.securityCodeFetched.error ? renderError() : ''}
 function mapStateToProps(state) {
     return {
         securityCodeChallenge: state.securityCodeChallenge,

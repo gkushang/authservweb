@@ -17,7 +17,7 @@ class UserInformation extends Component {
             );
         } else if(!userInfo.user) {
             return (
-                <div className="container-fluid auth-panel panel-color text-center text-danger user-info-action">
+                <div className="container-fluid auth-panel panel-color text-center text-danger user-info-action fade in">
                     <i className="fa fa-exclamation-triangle">  </i> Error retrieving user information
                 </div>
             );
