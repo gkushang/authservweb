@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 class UserInformation extends Component {
+
     render() {
 
         console.log('props == ', this.props);
@@ -14,7 +15,13 @@ class UserInformation extends Component {
                     Select Challenge to Pop User
                 </div>
             );
-        } 
+        } else if(!userInfo.user) {
+            return (
+                <div className="container-fluid auth-panel panel-color text-center text-danger user-info-action">
+                    <i className="fa fa-exclamation-triangle">  </i> Error retrieving user information
+                </div>
+            );
+        }
 
         // <p className="text-center user-info-title "><i className="fa fa-paypal"> </i> {this.props.challenge.type}</p>
 

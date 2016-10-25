@@ -10,9 +10,9 @@ export default (field) => {
                 className="security-field"
                 errorStyle={{"font-size": "10px"}}
                 style={{
-                    "padding-bottom": "5px",
+                    "paddingBottom": "5px",
                     "float" :"top",
-                    "font-size": "10px"
+                    "fontSize": "10px"
                 }}
                 {...field.input}
             />
