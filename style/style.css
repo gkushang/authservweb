@@ -77,8 +77,20 @@ body {
     bottom: 0;
     left: 0;
 }
+.generating {
+    margin-top: 225px;
+    font-size: 26px;
+}
 
+.creating-user-link {
+    font-size: 13px;
+    cursor: pointer;
+}
 
+span { display:block; /* Pre-existing code */ }
+span.inline {
+    display:inline;
+}
 .security-code-error-txt {
    margin-top: 8px;
     border-color: #ffa5a5 !important;
@@ -120,4 +132,8 @@ body {
     height: 100%;
     overflow:hidden;
     border-radius:5px;
+}
+
+.creating-user-link:hover {
+    color: #7f7fff !important;
 }
