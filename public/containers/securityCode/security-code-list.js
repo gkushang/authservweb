@@ -15,7 +15,8 @@ class SecurityCodeList extends Component {
                         href="#"
                         key={securityCodeChallenge.type}
                         onClick={() => this.props.selectSecurityCodeChallenge(securityCodeChallenge)}
-                        className={i === 0 ? "list-group-item list-group-item-action active" : "list-group-item list-group-item-action"}>
+                        className={i === 0 ? "list-group-item list-group-item-action panel-list-color active" :
+                            "list-group-item panel-list-color list-group-item-action"}>
                         {securityCodeChallenge.type}
                     </a>
                 )

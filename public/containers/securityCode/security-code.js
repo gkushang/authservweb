@@ -41,26 +41,31 @@ class SecurityCode extends Component {
             </div>
             );
 
-        const renderError = (err) => (
-            // <div className="col-lg-12 security-code-error "  data-hide="alert">
-            //     <div className="security-code-error-txt alert alert-danger col-sm-12 fade in"  data-hide="alert">
-            //         <button type="button" className="close" data-hide="alert">×</button>
-            //         <strong>Error!</strong> {err}
-            //     </div>
-            // </div>
+        const renderCode = (code) => {
+            code = "3993";
 
-            <div className="security-code-error-txt alert alert-danger col-sm-12" >
-                <button type="button" className="close alert-close">×</button>
-                <strong>Error!</strong> {err.error}
-            </div>
+            if(!code) {
+                return (
+                    <div className="form-group text-center text-danger alert-danger pull-right col-sm-2">
+                        <p className="security-code-danger"><i className="fa fa-exclamation-triangle security-code-danger">  </i> </p>
+                        <p className="security-code-not-found">Not Found</p>
+                    </div>
+                )
+            } else {
+               return (
+                   <div className="form-group security-code-retrieved pull-right col-sm-2">
+                       <label>{code}</label>
+                   </div>
+               );
+            }
+        };
 
-        );
 
         const renderStageField = () => (<Field
                 name="stage"
-                placeholder="ccp stage2"
+                placeholder="CCP"
                 type="text"
-                hintText="stage2"
+                hintText="claimscollectionserv stage2xx"
                 component={Input}/>
             );
 
@@ -77,7 +82,7 @@ class SecurityCode extends Component {
 
         const renderAccountField = () => (<Field
                     name="accountNumber"
-                    placeholder="account number"
+                    placeholder="Account Number or Email"
                     type="text"
                     component={Input}
                     defaultValue={this.props.user && this.props.user.accountNumber || ''}
@@ -108,12 +113,7 @@ class SecurityCode extends Component {
                             {renderButton()}
                         </div>
 
-
-                        <div className="form-group security-code-retrieved pull-right col-sm-2">
-                            <label>{this.props.securityCodeFetched.code || ''}</label>
-                        </div>
-
-                        {this.props.securityCodeFetched.error ? renderError(this.props.securityCodeFetched) : ''}
+                        {renderCode(this.props.securityCodeFetched.code)}
 
                     </form>
                 </div>

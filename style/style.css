@@ -67,6 +67,7 @@ body {
     width: 80%;
     height: 84px;
     border-radius:5px;
+    z-index:1 !important;
 }
 
 .security-code-error {
@@ -76,7 +77,18 @@ body {
     border-color: #ffa5a5 !important;
     bottom: 0;
     left: 0;
+    z-index:20 !important;
+    overflow: hidden;
+    position: relative;
 }
+
+.security-code-error-txt {
+    margin-top: 8px;
+    border-color: #ffa5a5 !important;
+    height: 45px;
+    overflow: hidden !important;
+}
+
 .generating {
     margin-top: 225px;
     font-size: 26px;
@@ -88,14 +100,11 @@ body {
 }
 
 span { display:block; /* Pre-existing code */ }
+
 span.inline {
     display:inline;
 }
-.security-code-error-txt {
-   margin-top: 8px;
-    border-color: #ffa5a5 !important;
-    height: 45px;
-}
+
 .security-field {
     float: top; !important;
     display: inline-block !important;
@@ -113,6 +122,18 @@ span.inline {
     padding: 50px;
     vertical-align: middle;
 }
+
+.security-code-danger{
+    font-size: 40px;
+    padding-top: 8px;
+}
+.security-code-not-found {
+    font-size: 13px;
+    height: 15px;
+    vertical-align: middle !important;
+    margin-top: -15px;
+}
+
 
 .security-code-retrieved {
     letter-spacing: 10px;
