@@ -15,7 +15,7 @@ class ChallengesList extends Component {
                         href="#"
                         key={challenge.type}
                         onClick={() => this.props.selectChallenge(challenge)}
-                        className="list-group-item">
+                        className="list-group-item panel-list-color">
                         {challenge.type}
                     </a>
                 )
@@ -26,7 +26,7 @@ class ChallengesList extends Component {
     render() {
         return (
                 <div className="container-fluid pop-user-panel">
-                    <div className="col-md-2">
+                    <div className="col-md-2 ">
                         {this.renderList()}
                     </div>
                     <UserInformation />

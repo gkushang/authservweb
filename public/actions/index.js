@@ -3,10 +3,23 @@ import popUser from '../../service/popUser';
 import faker from 'faker';
 
 export function selectChallenge(challenge) {
-    const user = popUser(challenge);
-    return {
-        type: Constants.CHALLENGE_SELECTED,
-        payload: user
+    return (dispatch) => {
+
+        const updateUser = (user) => {
+            user.data.challenge = challenge;
+            return user.data;
+        };
+
+        const dispatchAction = (user) => {
+            dispatch({
+                type: Constants.CHALLENGE_SELECTED,
+                user
+            })
+        };
+
+        return popUser(challenge)
+            .then(updateUser)
+            .then(dispatchAction);
     }
 }
 

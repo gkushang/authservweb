@@ -9,6 +9,8 @@ class UserInformation extends Component {
 
         const userInfo = this.props.user;
 
+        console.log('userInfo == ', userInfo);
+
         if (!userInfo) {
             return (
                 <div className="container-fluid auth-panel panel-color text-center user-info-action">
@@ -23,15 +25,13 @@ class UserInformation extends Component {
             );
         }
 
-        // <p className="text-center user-info-title "><i className="fa fa-paypal"> </i> {this.props.challenge.type}</p>
-
         const challenges = userInfo.challenges.join(', ');
 
         return (
             <div className="container-fluid auth-panel panel-color">
 
                 <div className="panel-heading text-info">
-                    <p className="text-center user-info-title "><i className="fa fa-paypal"> </i> {userInfo.challengeType}</p>
+                    <p className="text-center user-info-title "><i className="fa fa-paypal"> </i> {userInfo.challenge.type}</p>
                 </div>
 
                 <div className="col-sm-12">

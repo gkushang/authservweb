@@ -4,14 +4,14 @@ import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import App from './components/app';
 import reducers from './reducers';
-import ReduxPromise from 'redux-promise';
+import ReduxThunk from 'redux-thunk';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 
 const store = (window.devToolsExtension ? window.devToolsExtension()(createStore) : createStore);
 
-const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(store);
+const createStoreWithMiddleware = applyMiddleware(ReduxThunk)(store);
 
 ReactDOM.render(
 
