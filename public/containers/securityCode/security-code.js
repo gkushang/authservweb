@@ -42,11 +42,9 @@ class SecurityCode extends Component {
             );
 
         const renderCode = (code) => {
-            code = "3993";
-
             if(!code) {
                 return (
-                    <div className="form-group text-center text-danger alert-danger pull-right col-sm-2">
+                    <div className="form-group text-center text-danger pull-right col-sm-2">
                         <p className="security-code-danger"><i className="fa fa-exclamation-triangle security-code-danger">  </i> </p>
                         <p className="security-code-not-found">Not Found</p>
                     </div>
